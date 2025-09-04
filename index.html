@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Video Glow Player</title>
+	<meta name="theme-color" content="#f7f7f8" />
+	<link rel="stylesheet" href="./styles.css" />
+	<style>
+		:root { color-scheme: light; }
+		body.light { --bg: #f7f7f8; color: #111; background: radial-gradient(1200px 800px at 50% 40%, color-mix(in oklab, var(--glow) 20%, var(--bg)), var(--bg)); }
+		body.light .frame { background: #fff; border: 1px solid rgba(0,0,0,0.12); box-shadow: 0 20px 60px -20px rgba(0,0,0,0.12), 0 0 110px 44px var(--glow); }
+	</style>
+</head>
+<body class="light">
+	<main class="center">
+		<div class="frame glow" id="frame">
+			<video id="video" controls playsinline></video>
+			<canvas id="probe" width="32" height="62" style="display:none;"></canvas>
+			<div class="drop-hint" id="dropHint">Drag & drop a video here</div>
+		</div>
+	</main>
+
+	<script src="./main.js"></script>
+</body>
+</html>
